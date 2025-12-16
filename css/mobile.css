@@ -170,6 +170,7 @@ html {
         width: 100%;
         display: flex;
         justify-content: center;
+        animation: none !important;
     }
 }
 
@@ -232,6 +233,7 @@ html {
         position: static;
         margin-top: 20px;
         transform: none;
+        animation: none !important;
     }
 }
 
