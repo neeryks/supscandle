@@ -1,0 +1,23 @@
+# Robots.txt for Sup's Candles
+# Allow all search engines
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.supscandles.com/sitemap.xml
+
+# Disallow admin/test pages if any
+Disallow: /test-*.html
+Disallow: /debug*.html
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Allow Google Image Bot
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Allow all CSS and JS
+Allow: /css/
+Allow: /js/

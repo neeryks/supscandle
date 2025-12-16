@@ -1,0 +1,41 @@
+{
+  "name": "Sup's Candle - Premium Scented Candles India",
+  "short_name": "Sup's Candle",
+  "description": "Buy premium handmade scented candles online in India. Natural soy wax with exotic fragrances.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#6E1F2A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["shopping", "lifestyle", "home"],
+  "lang": "en-IN",
+  "dir": "ltr",
+  "screenshots": [
+    {
+      "src": "/images/screenshot-wide.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/images/screenshot-narrow.jpg",
+      "sizes": "750x1334",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ]
+}

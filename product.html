@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Premium Scented Candles | Natural Soy Wax | Sup's Candle India</title>
+    <meta name="description" content="Buy handcrafted luxury scented candles online. Choose your fragrance - Geeli Mitti, Vanilla, Orange, Mango. 40+ hours burn time. Natural soy wax. Order now!">
+    <meta name="keywords" content="scented candle, luxury candle India, natural soy candle, aromatherapy, home fragrance, gift candle, handmade candle">
+    <link rel="canonical" href="https://www.supscandles.com/product.html">
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="Premium Handmade Scented Candle">
+    <meta property="og:description" content="Luxury scented candles with natural soy wax. Multiple fragrances available.">
+    <meta name="theme-color" content="#6E1F2A">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🕯️</span>
+                    <span class="logo-text">Sup's Candle</span>
+                </a>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <a href="https://instagram.com/supscandle" target="_blank" class="nav-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <button class="nav-toggle" id="navToggle" aria-label="Toggle Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Product Detail -->
+    <section class="product-section">
+        <div class="container">
+            <div class="product-layout">
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="product-image-main">
+                        <img id="mainImage" src="" alt="Product image">
+                        <div class="product-glow"></div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <div class="product-breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span>/</span>
+                        <a href="shop.html">Shop</a>
+                        <span>/</span>
+                        <span id="productBreadcrumb">Loading...</span>
+                    </div>
+                    
+                    <h1 class="product-name" id="productName">Loading...</h1>
+                    
+                    <div class="product-price-display">
+                        <span class="price-label">Price</span>
+                        <span class="price-value" id="productPrice">₹250.00</span>
+                    </div>
+                    
+                    <div class="product-description" id="productDescription">
+                        <!-- Loaded dynamically -->
+                    </div>
+                    
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Burn Time</strong>
+                                <span id="burnTime">40+ hours</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <strong>Wax Type</strong>
+                                <span id="waxType">Natural Soy</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label class="option-label">Choose Fragrance</label>
+                            <select id="fragranceSelector" class="fragrance-selector">
+                                <option value="">Loading fragrances...</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-lg btn-block" id="buyNowBtn">
+                        <i class="fab fa-instagram"></i> Buy Now via Instagram
+                    </button>
+                    
+                    <div class="product-care">
+                        <details>
+                            <summary>Care Instructions</summary>
+                            <ul id="careInstructionsList">
+                                <!-- Loaded from Contentful -->
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-section">
+        <div class="container">
+            <h2 class="section-title">You May Also Love</h2>
+            <div class="products-grid" id="relatedProducts">
+                <!-- Related products loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">🕯️ Sup's Candle</h3>
+                    <p class="footer-tagline">Elegance in every flicker</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Shop</h4>
+                        <ul>
+                            <li><a href="shop.html">All Candles</a></li>
+                            <li><a href="shop.html?filter=featured">Featured</a></li>
+                            <li><a href="shop.html?filter=new">New Arrivals</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="about.html#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="https://instagram.com/supscandle" target="_blank">Instagram</a></li>
+                            <li><a href="mailto:hello@softestcandles.com">Email</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Softest Candles. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Contentful SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+    
+    <!-- App Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/api-service.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>

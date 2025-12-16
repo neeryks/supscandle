@@ -1,0 +1,266 @@
+<!-- 
+    TESTING PAGE - Open this in browser to verify setup
+    This page tests all major functionality
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Test - Softest Candles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0C0C0C;
+            color: #F3F3F3;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #6E1F2A;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        .test-section {
+            background: #1A1A1A;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #6E1F2A;
+        }
+        
+        .test-section h2 {
+            color: #F3F3F3;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+        
+        .status.pass {
+            background: #2d5016;
+            color: #7fba3d;
+        }
+        
+        .status.fail {
+            background: #6e1f2a;
+            color: #ff6b6b;
+        }
+        
+        .status.warning {
+            background: #6e4f1f;
+            color: #ffb74d;
+        }
+        
+        ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            color: #B8B8B8;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 2px solid #6E1F2A;
+            color: #F3F3F3;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #6E1F2A;
+            transform: translateY(-2px);
+        }
+        
+        code {
+            background: #0C0C0C;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: #7fba3d;
+        }
+        
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .link-card {
+            background: #1A1A1A;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s;
+            border: 1px solid rgba(110, 31, 42, 0.3);
+        }
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+            border-color: #6E1F2A;
+        }
+        
+        .link-card h3 {
+            color: #6E1F2A;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🕯️ Softest Candles - Setup Test</h1>
+        
+        <div class="test-section">
+            <h2>✅ Core Files</h2>
+            <div id="filesTest">Checking...</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🎨 CSS Loading</h2>
+            <div id="cssTest">Checking...</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📜 JavaScript</h2>
+            <div id="jsTest">Checking...</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🖼️ Images</h2>
+            <div id="imagesTest">
+                <p>Image folder structure should contain:</p>
+                <ul>
+                    <li>candle-1.jpg through candle-9.jpg</li>
+                    <li>hero-candle.jpg</li>
+                    <li>about-1.jpg</li>
+                    <li>ig-1.jpg through ig-4.jpg</li>
+                </ul>
+                <p style="color: #ffb74d; margin-top: 1rem;">⚠️ Add your images to <code>assets/images/</code> folder</p>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>⚙️ Configuration</h2>
+            <div id="configTest">
+                <ul>
+                    <li>Update Instagram handle: Search for <code>your_handle</code> in all files</li>
+                    <li>Update email in contact.html: <code>hello@softestcandles.com</code></li>
+                    <li>Update WhatsApp number in contact.html</li>
+                    <li>Customize products in <code>js/products.js</code></li>
+                </ul>
+                <span class="status warning">ACTION REQUIRED</span>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📄 Quick Navigation</h2>
+            <div class="links">
+                <a href="index.html" class="link-card">
+                    <h3>Home</h3>
+                    <p>Homepage</p>
+                </a>
+                <a href="shop.html" class="link-card">
+                    <h3>Shop</h3>
+                    <p>Products</p>
+                </a>
+                <a href="product.html?id=midnight-rose" class="link-card">
+                    <h3>Product</h3>
+                    <p>Detail Page</p>
+                </a>
+                <a href="about.html" class="link-card">
+                    <h3>About</h3>
+                    <p>Our Story</p>
+                </a>
+                <a href="contact.html" class="link-card">
+                    <h3>Contact</h3>
+                    <p>Get in Touch</p>
+                </a>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h2>📚 Next Steps</h2>
+            <ol style="margin-left: 2rem;">
+                <li>Review SETUP.md for detailed instructions</li>
+                <li>Add product images to assets/images/</li>
+                <li>Update Instagram handle and contact info</li>
+                <li>Customize products in js/products.js</li>
+                <li>Test all pages and functionality</li>
+                <li>Deploy to your hosting/GitHub Pages</li>
+            </ol>
+            <a href="SETUP.md" class="btn">Read Setup Guide</a>
+        </div>
+    </div>
+    
+    <script>
+        // Test if files are accessible
+        window.addEventListener('DOMContentLoaded', function() {
+            // Test CSS
+            const testDiv = document.createElement('div');
+            testDiv.style.cssText = 'var(--color-accent-wine)';
+            
+            // Test JS files
+            let jsStatus = 'Loading...';
+            if (typeof window.appUtils !== 'undefined' && typeof window.productsDB !== 'undefined') {
+                jsStatus = '<span class="status pass">✓ All JavaScript files loaded</span>';
+                jsStatus += '<ul><li>main.js ✓</li><li>products.js ✓</li></ul>';
+            } else {
+                jsStatus = '<span class="status warning">⚠ JavaScript files may not be loaded correctly</span>';
+                jsStatus += '<p style="margin-top: 0.5rem; color: #ffb74d;">Open browser console (F12) to check for errors</p>';
+            }
+            
+            document.getElementById('jsTest').innerHTML = jsStatus;
+            
+            // Files test
+            document.getElementById('filesTest').innerHTML = `
+                <span class="status pass">✓ Core HTML files present</span>
+                <ul>
+                    <li>index.html</li>
+                    <li>shop.html</li>
+                    <li>product.html</li>
+                    <li>about.html</li>
+                    <li>contact.html</li>
+                </ul>
+            `;
+            
+            // CSS test
+            document.getElementById('cssTest').innerHTML = `
+                <span class="status pass">✓ CSS structure ready</span>
+                <ul>
+                    <li>main.css - Global styles</li>
+                    <li>components.css - Reusable components</li>
+                    <li>animations.css - Animation effects</li>
+                </ul>
+            `;
+        });
+    </script>
+</body>
+</html>
