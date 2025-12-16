@@ -339,8 +339,18 @@
 
 .sparkle {
     position: absolute;
-    width: 4px;marker {
-    color: #d4af7a
+    width: 4px;
+    height: 4px;
+    background: #d4af7a;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: sparkle 1s ease-out forwards;
+}
+
+.product-care summary::marker {
+    color: #d4af7a;
+}
+
 /* Mobile Optimizations */
 @media (max-width: 768px) {
     .product-section {
@@ -349,7 +359,7 @@
     
     .product-layout {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
     }
     
     .product-gallery {
@@ -357,38 +367,83 @@
         top: 0;
     }
     
+    .product-image-main {
+        border-radius: 16px;
+    }
+    
     .product-name {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+    
+    .product-price-display {
+        padding: 20px 24px;
+        margin: 24px 0;
     }
     
     .price-value {
-        font-size: 2.25rem;
+        font-size: 2rem;
+    }
+    
+    .product-description {
+        font-size: 0.9375rem;
+        line-height: 1.6;
     }
     
     .product-features {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 12px;
+        margin: 24px 0;
+    }
+    
+    .feature-item {
+        padding: 16px;
+        flex-direction: row;
+    }
+    
+    .feature-item i {
+        font-size: 1.5rem;
     }
     
     .btn-primary {
         width: 100%;
         padding: 18px 32px;
-    }
-    
-    /* Keep fire animations on mobile */
-    .nav-link::before {
-        top: -20px;
         font-size: 1rem;
     }
     
-    /* et Optimizations */
+    .fragrance-selector {
+        padding: 14px 16px;
+        font-size: 1rem;
+    }
+    
+    .product-care {
+        margin-top: 32px;
+    }
+    
+    /* Reduce motion for mobile performance */
+    .product-image-main:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px) scale(1.01);
+    }
+    
+    /* Simplify animations */
+    * {
+        animation-duration: 0.3s !important;
+    }
+}
+
+/* Tablet Optimizations */
 @media (min-width: 769px) and (max-width: 1024px) {
     .product-layout {
         gap: 60px;
     }
     
     .product-name {
-        font-size: 3rem;
+        font-size: 2.75rem;
     }
 }
 
@@ -411,13 +466,7 @@
 }
 
 .product-section.loading::after {
-    content: '🕯️';
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 4rem;
-    animation:';
+    content: '';
     position: fixed;
     top: 50%;
     left: 50%;
