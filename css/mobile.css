@@ -71,40 +71,167 @@ html {
     }
 }
 
-/* Mobile Hero Section */
+/* Mobile Hero Section (fix selectors + reverse order) */
 @media (max-width: 768px) {
     .hero {
         min-height: 80vh;
-        padding: 60px 20px 40px;
+        padding: 52px 20px 32px;
+        overflow: hidden;
     }
-    
-    .hero-content {
+
+    /* Reduce heavy effects on mobile */
+    .hero-bg-layers,
+    .hero-ambient-glow,
+    .hero-particles,
+    .gallery-glow,
+    .scroll-indicator {
+        display: none !important;
+    }
+
+    /* Stack hero sections and reverse: visuals first, then content */
+    .hero-container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 24px;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .hero-main-content {
         text-align: center;
-        margin-bottom: 40px;
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 0 16px;
     }
-    
+
+    .hero-title-breathtaking {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 6px 10px;
+        justify-content: center;
+    }
+
+    .hero-subtitle-breathtaking {
+        margin-top: 10px;
+        opacity: 0.9;
+    }
+
+    .hero-cta-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    /* Show only ONE image on mobile - hide secondary and accent */
     .hero-visual-gallery {
-        gap: 15px;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        margin: 0 auto;
     }
-    
+
     .gallery-item {
-        height: 250px !important;
+        position: relative !important;
+        height: auto !important;
         width: 100% !important;
+        border-radius: 16px;
+        overflow: hidden;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        animation: none !important;
     }
-    
+
+    /* Show only the main gallery item */
+    .gallery-main {
+        display: block;
+    }
+
+    .gallery-secondary,
+    .gallery-accent {
+        display: none !important;
+    }
+
     .gallery-item img {
         object-fit: cover;
-        height: 100%;
+        height: auto;
         width: 100%;
+        display: block;
+        aspect-ratio: 4 / 5;
     }
-    
+
+    .floating-stats {
+        position: static;
+        margin-top: 16px;
+        transform: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Tablet devices (iPad, etc) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero {
+        min-height: 70vh;
+        padding: 60px 32px 40px;
+    }
+
+    .hero-container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 32px;
+        align-items: center;
+    }
+
+    .hero-main-content {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    /* Show only ONE image on tablet too */
+    .hero-visual-gallery {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .gallery-item {
+        position: relative !important;
+        height: auto !important;
+        width: 100% !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        animation: none !important;
+    }
+
+    .gallery-main {
+        display: block;
+    }
+
+    .gallery-secondary,
+    .gallery-accent {
+        display: none !important;
+    }
+
+    .gallery-item img {
+        aspect-ratio: 4 / 5;
+        width: 100%;
+        height: auto;
+    }
+
     .floating-stats {
         position: static;
         margin-top: 20px;
         transform: none;
-        width: 100%;
     }
 }
 
@@ -294,16 +421,26 @@ html {
 @media (max-width: 768px) and (orientation: landscape) {
     .hero {
         min-height: 100vh;
-        padding: 40px 20px;
+        padding: 36px 16px;
     }
-    
+
+    .hero-container {
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .hero-main-content {
+        flex: 1;
+    }
+
     .hero-visual-gallery {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        flex: 1;
+        max-width: 400px;
     }
-    
-    .gallery-item {
-        height: 180px !important;
+
+    .gallery-item img {
+        aspect-ratio: 3 / 4;
     }
 }
 
