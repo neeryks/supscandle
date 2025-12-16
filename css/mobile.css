@@ -70,7 +70,7 @@ html {
 @media (max-width: 768px) {
     .hero {
         min-height: 80vh;
-        padding: 52px 20px 32px;
+        padding: 52px 12px 32px;
         overflow: hidden;
     }
 
@@ -82,6 +82,12 @@ html {
     .scroll-indicator {
         display: none !important;
     }
+    
+    /* Hide badge and stats on mobile */
+    .hero-badge,
+    .floating-stats {
+        display: none !important;
+    }
 
     /* Stack hero sections and reverse: visuals first, then content */
     .hero-container {
@@ -90,13 +96,14 @@ html {
         gap: 24px;
         align-items: center;
         max-width: 100%;
+        padding: 0;
     }
 
     .hero-main-content {
         text-align: center;
         margin: 0 auto;
         max-width: 100%;
-        padding: 0 16px;
+        padding: 0 12px;
     }
 
     .hero-title-breathtaking {
@@ -122,16 +129,17 @@ html {
     .hero-visual-gallery {
         position: relative;
         width: 100%;
-        max-width: 500px;
+        max-width: 600px;
         height: auto;
-        margin: 0 auto;
+        margin: 0;
+        padding: 0 12px;
     }
 
     .gallery-item {
         position: relative !important;
         height: auto !important;
         width: 100% !important;
-        border-radius: 16px;
+        border-radius: 20px;
         overflow: hidden;
         top: auto !important;
         left: auto !important;
@@ -155,17 +163,16 @@ html {
         height: auto;
         width: 100%;
         display: block;
-        aspect-ratio: 4 / 5;
+        aspect-ratio: 1 / 1;
     }
-
-    .floating-stats {
-        position: static;
-        margin-top: 16px;
-        transform: none;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        animation: none !important;
+    
+    /* Show mobile-specific image on mobile */
+    .hero-img-desktop {
+        display: none !important;
+    }
+    
+    .hero-img-mobile {
+        display: block !important;
     }
 }
 
@@ -174,6 +181,12 @@ html {
     .hero {
         min-height: 70vh;
         padding: 60px 32px 40px;
+    }
+    
+    /* Hide badge and stats on tablet */
+    .hero-badge,
+    .floating-stats {
+        display: none !important;
     }
 
     .hero-container {
@@ -219,16 +232,9 @@ html {
     }
 
     .gallery-item img {
-        aspect-ratio: 4 / 5;
+        aspect-ratio: 1 / 1;
         width: 100%;
         height: auto;
-    }
-
-    .floating-stats {
-        position: static;
-        margin-top: 20px;
-        transform: none;
-        animation: none !important;
     }
 }
 
