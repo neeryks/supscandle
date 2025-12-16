@@ -1152,21 +1152,31 @@ img {
     
     .nav-menu {
         position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        width: 85%;
+        max-width: 320px;
         flex-direction: column;
         background-color: var(--color-bg-primary);
-        padding: var(--spacing-lg);
-        transform: translateY(-100%);
-        opacity: 0;
-        transition: transform var(--transition-base), opacity var(--transition-base);
-        box-shadow: var(--shadow-lg);
+        padding: 80px var(--spacing-lg) var(--spacing-2xl);
+        opacity: 1;
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        overflow-y: auto;
     }
     
     .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
+        right: 0;
+    }
+    
+    .nav-menu li {
+        margin-bottom: 8px;
+    }
+    
+    body.menu-open {
+        overflow: hidden;
     }
     
     .nav-toggle {
