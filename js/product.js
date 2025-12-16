@@ -406,3 +406,68 @@ function copyToClipboard(text) {
         document.body.removeChild(textarea);
     }
 }
+
+// ===================================
+// ENHANCED UI INTERACTIONS
+// ===================================
+
+// Add sparkle effect on button hover
+document.addEventListener('DOMContentLoaded', function() {
+    const buyButton = document.getElementById('buyNowBtn');
+    
+    if (buyButton) {
+        buyButton.addEventListener('mouseenter', function(e) {
+            createSparkles(e.currentTarget);
+        });
+    }
+    
+    // Add scroll reveal animation
+    initScrollReveal();
+    
+    // Add image hover effect
+    const productImage = document.querySelector('.product-image-main');
+    if (productImage) {
+        productImage.addEventListener('mouseenter', function() {
+            this.style.transition = 'all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        });
+    }
+});
+
+function createSparkles(element) {
+    const rect = element.getBoundingClientRect();
+    const sparkleCount = 5;
+    
+    for (let i = 0; i < sparkleCount; i++) {
+        setTimeout(() => {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * rect.width + 'px';
+            sparkle.style.top = Math.random() * rect.height + 'px';
+            element.style.position = 'relative';
+            element.appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 1000);
+        }, i * 100);
+    }
+}
+
+function initScrollReveal() {
+    const revealElements = document.querySelectorAll('.product-info > *');
+    
+    const revealOnScroll = () => {
+        revealElements.forEach((el, index) => {
+            const elementTop = el.getBoundingClientRect().top;
+            const elementVisible = 100;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 100);
+            }
+        });
+    };
+    
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Initial check
+}

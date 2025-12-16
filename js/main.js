@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
     initScrollEffects();
     initScrollReveal();
+    initEnhancedEffects();
 });
 
 // ===================================
@@ -312,6 +313,79 @@ if (document.getElementById('featuredProducts')) {
     
     // Timeout after 5 seconds
     setTimeout(() => clearInterval(checkAndLoad), 5000);
+}
+
+// ===================================
+// ENHANCED UI EFFECTS
+// ===================================
+
+function initEnhancedEffects() {
+    // Add sparkle effect to all buttons
+    const buttons = document.querySelectorAll('.btn-primary, .btn-breathtaking, .btn');
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', function(e) {
+            createSparkles(this);
+        });
+    });
+    
+    // Add sparkle to product cards on hover
+    const productCards = document.querySelectorAll('.product-card');
+    productCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const image = this.querySelector('.product-card-image');
+            if (image) {
+                createSparkles(image);
+            }
+        });
+    });
+    
+    // Add sparkle to feature bubbles
+    const featureBubbles = document.querySelectorAll('.feature-bubble');
+    featureBubbles.forEach(bubble => {
+        bubble.addEventListener('mouseenter', function() {
+            createSparkles(this);
+        });
+    });
+    
+    // Add sparkle to gallery items
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            createSparkles(this);
+        });
+    });
+    
+    // Add sparkle to instagram items
+    const instaItems = document.querySelectorAll('.instagram-item');
+    instaItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            createSparkles(this);
+        });
+    });
+}
+
+function createSparkles(element) {
+    const rect = element.getBoundingClientRect();
+    const sparkleCount = 5;
+    
+    for (let i = 0; i < sparkleCount; i++) {
+        setTimeout(() => {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * rect.width + 'px';
+            sparkle.style.top = Math.random() * rect.height + 'px';
+            
+            // Make element position relative if not already
+            const position = window.getComputedStyle(element).position;
+            if (position === 'static') {
+                element.style.position = 'relative';
+            }
+            
+            element.appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 1000);
+        }, i * 100);
+    }
 }
 
 // Export functions for use in other scripts
